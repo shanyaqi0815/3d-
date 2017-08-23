@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d控件</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <style>
+        .box{
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+            transform-style: preserve-3d;
+
+        }
+        .box1{
+            margin: auto;
+            width: 500px;height: 500px;
+            background-color: #00b3ee;
+            transition:transform 1s ;
+        }
+        .op{ width: 500px;height: 500px;;margin:50px auto;}
+        .one{width: 400px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1" id="box-one"></div>
+    </div>
+
+    <div class="op">
+        <p>x轴位移:<span id="degx-span">0</span>px</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x" value="0" class="one"  >
+        <p>y轴位移:<span id="degx-span1">0</span>px</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x1" value="1" class="one" >
+        <p>z轴位移:<span id="degx-span2">0</span>px</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x2" value="2" class="one" >
+        <p>x轴反转:<span id="degx-span3">0</span>deg</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x3" value="3" class="one" >
+        <p>y轴反转:<span id="degx-span4">0</span>deg</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x4" value="4" class="one" >
+        <p>z轴反转:<span id="degx-span5">0</span>deg</p>
+        <input type="range" min="-360" max="360" maxlength="360" size="50" id="rotate-x5" value="5" class="one" >
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+
+
+    $("#rotate-x").change(function(){
+        var x=$("#rotate-x").val();
+        $("#box-one").css({"transform": "translateX("+x+"px)"});
+        $("#degx-span").html(x)
+
+    })
+    $("#rotate-x1").change(function(){
+        var y=$("#rotate-x1").val();
+        $("#box-one").css({"transform": "translateY("+y+"px)"});
+        $("#degx-span1").html(y)
+
+    })
+    $("#rotate-x2").change(function(){
+        var z=$("#rotate-x2").val();
+        $("#box-one").css({"transform": "translateZ("+z+"px)"});
+        $("#degx-span2").html(z)
+
+    })
+        $("#rotate-x3").change(function(){
+            var x=$("#rotate-x3").val();
+            $("#box-one").css({"transform": "rotateX("+x+"deg)"});
+            $("#degx-spa3").html(x)
+
+        })
+        $("#rotate-x4").change(function(){
+            var y=$("#rotate-x4").val();
+            $("#box-one").css({"transform": "rotateY("+y+"deg)"});
+            $("#degx-span4").html(y)
+
+        })
+        $("#rotate-x5").change(function(){
+            var z=$("#rotate-x5").val();
+            $("#box-one").css({"transform": "rotateZ("+z+"deg)"});
+            $("#degx-span5").html(z)
+
+        })
+    })
+</script>
